@@ -32,11 +32,11 @@ const animationTimeline = () => {
 
   textBoxChars.innerHTML = `<span>${textBoxChars.innerHTML
     .split("")
-    .join("</span><span>")}</span`;
+    .join("</span><span>")}</span>`;
 
   hbd.innerHTML = `<span>${hbd.innerHTML
     .split("")
-    .join("</span><span>")}</span`;
+    .join("</span><span>")}</span>`;
 
   const ideaTextTrans = {
     opacity: 0,
@@ -87,7 +87,6 @@ const animationTimeline = () => {
     .from(".three", 0.7, {
       opacity: 0,
       y: 10
-      // scale: 0.7
     })
     .to(
       ".three",
@@ -232,7 +231,6 @@ const animationTimeline = () => {
       {
         opacity: 0,
         y: -50,
-        // scale: 0.3,
         rotation: 150,
         skewX: "30deg",
         ease: Elastic.easeOut.config(1, 0.5)
@@ -291,11 +289,10 @@ const animationTimeline = () => {
       },
       "+=1"
     )
-    .from(".dedicated-song", 0.7, {
-      opacity: 0,
-      y: 50,
-      ease: Expo.easeOut
-    })
+    .to(".dedicated-song", 1, {
+      opacity: 1,
+      visibility: "visible"
+    });
 
   // Restart Animation on click
   const replyBtn = document.getElementById("replay");
