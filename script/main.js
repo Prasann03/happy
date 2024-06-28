@@ -292,7 +292,7 @@ const animationTimeline = () => {
       "+=1"
     )
     .to(".dedicated-song", 1, {
-      opacity: 1,
+      opacity: 0,
       visibility: "visible"
     }, "+=8"); // Add delay before displaying the dedicated song
 
