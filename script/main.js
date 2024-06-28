@@ -32,11 +32,11 @@ const animationTimeline = () => {
 
   textBoxChars.innerHTML = `<span>${textBoxChars.innerHTML
     .split("")
-    .join("</span><span>")}</span>`;
+    .join("</span><span>")}</span`;
 
   hbd.innerHTML = `<span>${hbd.innerHTML
     .split("")
-    .join("</span><span>")}</span>`;
+    .join("</span><span>")}</span`;
 
   const ideaTextTrans = {
     opacity: 0,
@@ -291,11 +291,13 @@ const animationTimeline = () => {
       },
       "+=1"
     )
-     .from(".dedicated-song", 0.7, {
+    .from(".dedicated-song", 0.7, {
       opacity: 0,
       y: 50,
       ease: Expo.easeOut
     });
+
+  // Restart Animation on click
   const replyBtn = document.getElementById("replay");
   replyBtn.addEventListener("click", () => {
     tl.restart();
@@ -304,4 +306,3 @@ const animationTimeline = () => {
 
 // Run fetch and animation in sequence
 fetchData();
-
