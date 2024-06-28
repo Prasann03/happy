@@ -3,7 +3,7 @@ const fetchData = () => {
   fetch("customize.json")
     .then(data => data.json())
     .then(data => {
-      dataArr = Object.keys(data);
+      const dataArr = Object.keys(data);
       dataArr.map(customData => {
         if (data[customData] !== "") {
           if (customData === "imagePath") {
@@ -16,8 +16,8 @@ const fetchData = () => {
         }
 
         // Check if the iteration is over
-        // Run amimation if so
-        if ( dataArr.length === dataArr.indexOf(customData) + 1 ) {
+        // Run animation if so
+        if (dataArr.length === dataArr.indexOf(customData) + 1) {
           animationTimeline();
         } 
       });
@@ -26,7 +26,7 @@ const fetchData = () => {
 
 // Animation Timeline
 const animationTimeline = () => {
-  // Spit chars that needs to be animated individually
+  // Spit chars that need to be animated individually
   const textBoxChars = document.getElementsByClassName("hbd-chatbox")[0];
   const hbd = document.getElementsByClassName("wish-hbd")[0];
 
@@ -290,10 +290,12 @@ const animationTimeline = () => {
         rotation: 90
       },
       "+=1"
-    );
-
-  // tl.seek("currentStep");
-  // tl.timeScale(2);
+    )
+    .from(".dedicated-song", 0.7, {
+      opacity: 0,
+      y: 50,
+      ease: Expo.easeOut
+    });
 
   // Restart Animation on click
   const replyBtn = document.getElementById("replay");
