@@ -291,12 +291,11 @@ const animationTimeline = () => {
       },
       "+=1"
     )
-    .to(".dedicated-song", 1, {
+     .from(".dedicated-song", 0.7, {
       opacity: 0,
-      visibility: "visible"
-    }, "+=8"); // Add delay before displaying the dedicated song
-
-  // Restart Animation on click
+      y: 50,
+      ease: Expo.easeOut
+    });
   const replyBtn = document.getElementById("replay");
   replyBtn.addEventListener("click", () => {
     tl.restart();
