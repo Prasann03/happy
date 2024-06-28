@@ -295,7 +295,7 @@ const animationTimeline = () => {
       opacity: 0,
       y: 50,
       ease: Expo.easeOut
-    });
+    })
 
   // Restart Animation on click
   const replyBtn = document.getElementById("replay");
