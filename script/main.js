@@ -291,9 +291,11 @@ const animationTimeline = () => {
       },
       "+=1"
     )
-    .from(".dedicated-song", 0.7, {
-      opacity: 0,
-      y: 50,
+    .to({}, 8, {}) // Add a delay of 8 seconds before showing the dedicated song
+    .to(".dedicated-song", 0.7, {
+      visibility: "visible",
+      opacity: 1,
+      y: 0,
       ease: Expo.easeOut
     });
 
