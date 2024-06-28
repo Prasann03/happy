@@ -305,3 +305,4 @@ const animationTimeline = () => {
 
 // Run fetch and animation in sequence
 fetchData();
+
