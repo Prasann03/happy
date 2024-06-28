@@ -3,7 +3,7 @@ const fetchData = () => {
   fetch("customize.json")
     .then(data => data.json())
     .then(data => {
-      dataArr = Object.keys(data);
+      const dataArr = Object.keys(data);
       dataArr.map(customData => {
         if (data[customData] !== "") {
           if (customData === "imagePath") {
@@ -16,8 +16,8 @@ const fetchData = () => {
         }
 
         // Check if the iteration is over
-        // Run amimation if so
-        if ( dataArr.length === dataArr.indexOf(customData) + 1 ) {
+        // Run animation if so
+        if (dataArr.length === dataArr.indexOf(customData) + 1) {
           animationTimeline();
         } 
       });
@@ -26,17 +26,17 @@ const fetchData = () => {
 
 // Animation Timeline
 const animationTimeline = () => {
-  // Spit chars that needs to be animated individually
+  // Spit chars that need to be animated individually
   const textBoxChars = document.getElementsByClassName("hbd-chatbox")[0];
   const hbd = document.getElementsByClassName("wish-hbd")[0];
 
   textBoxChars.innerHTML = `<span>${textBoxChars.innerHTML
     .split("")
-    .join("</span><span>")}</span`;
+    .join("</span><span>")}</span>`;
 
   hbd.innerHTML = `<span>${hbd.innerHTML
     .split("")
-    .join("</span><span>")}</span`;
+    .join("</span><span>")}</span>`;
 
   const ideaTextTrans = {
     opacity: 0,
@@ -290,10 +290,11 @@ const animationTimeline = () => {
         rotation: 90
       },
       "+=1"
-    );
-
-  // tl.seek("currentStep");
-  // tl.timeScale(2);
+    )
+    .to(".dedicated-song", 1, {
+      opacity: 1,
+      visibility: "visible"
+    }, "+=8"); // Add delay before displaying the dedicated song
 
   // Restart Animation on click
   const replyBtn = document.getElementById("replay");
